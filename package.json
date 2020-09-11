@@ -4,7 +4,8 @@
   "description": "This is Vapor based AI Driven Accounting System",
   "main": "index.js",
   "scripts": {
-    "test": "start"
+    "test": "start",
+    "start": "nodemon server.js"
   },
   "keywords": [
     "Vapor"
