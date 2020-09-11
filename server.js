@@ -12,6 +12,8 @@ const express = require('express'),
   url = require('url');
 nodemailer = require('nodemailer');
 
+const port = process.env.PORT || 5000;
+
 const mongoose = require('mongoose');
 
 let user, password;
@@ -127,5 +129,5 @@ app.use(express.static('Vapor_Backend'));
             res.send('Wellcome to Vapor')
           });
 
-     app.listen(8006, () => console.log('Started successfully on port 8006!'));
+     app.listen(port, () => console.log('Started successfully on port 5000!'));
         });
