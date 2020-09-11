@@ -2,7 +2,7 @@
   "name": "vapor_system",
   "version": "1.0.0",
   "description": "This is Vapor based AI Driven Accounting System",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "start",
     "start": "node server.js"
