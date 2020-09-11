@@ -321,7 +321,7 @@ const express = require('express'),
                        if (result.length) {
                         transporter.sendMail({
                           from: {
-                            name: 'SPOT Customers',  
+                            name: 'Customers',  
                             address: 'noreply@spotyourdeals.com'
                           },
                             to: req.body.email,
@@ -418,13 +418,14 @@ const express = require('express'),
               }
 
               db.collection('Customers').insertOne({
-                "Customer name": req.body.name,
+                "Customername": req.body.name,
                 "email": req.body.email,
                 "MobileNo": req.body.Mobile,
                 "Address": req.body.Address,
-                "GST Details": req.body.GST_Detail,
-                "Opening Balance": req.body.Balance,
-                "Internal Note": req.body.Internal_note,
+                "GSTDetails": req.body.GST_Detail,
+                "OpeningBalance": req.body.Balance,
+                "InternalNote": req.body.Internal_note,
+                "BusinessType": req.body.BusinessType,
                 "Client_id": new MongoClient.ObjectID(req.body.Client_id),
                 "datetime": new Date(Date.now()).toISOString().split('.')[0]
               });
@@ -448,13 +449,14 @@ const express = require('express'),
                 throw"Client _id must be reuired";
               }
               db.collection('Vendors').insertOne({
-                "Supplier name": req.body.name,
+                "SupplierName": req.body.name,
                 "email": req.body.email,
                 "MobileNo": req.body.Mobile,
                 "Address": req.body.Address,
-                "GST Details": req.body.GST_Detail,
-                "Opening Balance": req.body.Balance,
-                "Internal Note": req.body.Internal_note,
+                "GSTDetails": req.body.GST_Detail,
+                "OpeningBalance": req.body.Balance,
+                "InternalNote": req.body.Internal_note,
+                "BusinessType": req.body.BusinessType,
                 "Client_id": new MongoClient.ObjectID(req.body.Client_id),
                 "datetime": new Date(Date.now()).toISOString().split('.')[0]
 
@@ -476,9 +478,10 @@ const express = require('express'),
                     "email": req.body.email,
                     "MobileNo": req.body.Mobile,
                     "Address": req.body.Address,
-                    "GST Details": req.body.GST_Detail,
-                    "Opening Balance": req.body.Balance,
-                    "Internal Note": req.body.Internal_note,
+                    "GSTDetails": req.body.GST_Detail,
+                    "OpeningBalance": req.body.Balance,
+                    "InternalNote": req.body.Internal_note,
+                    "BusinessType": req.body.BusinessType,
                     "datetime": new Date(Date.now()).toISOString().split('.')[0]
                   }
                 },{
@@ -494,13 +497,14 @@ const express = require('express'),
               db.collection('Vendors').updateMany({_id:new MongoClient.ObjectID(req.body.VendorId)},
                 {
                   $set:{
-                    "Supplier name": req.body.name,
+                    "SupplierName": req.body.name,
                     "email": req.body.email,
                     "MobileNo": req.body.Mobile,
                     "Address": req.body.Address,
-                    "GST Details": req.body.GST_Detail,
-                    "Opening Balance": req.body.Balance,
-                    "Internal Note": req.body.Internal_note,
+                    "GSTDetails": req.body.GST_Detail,
+                    "OpeningBalance": req.body.Balance,
+                    "InternalNote": req.body.Internal_note,
+                    "BusinessType": req.body.BusinessType,
                     "datetime": new Date(Date.now()).toISOString().split('.')[0]
                   }
                 },{
