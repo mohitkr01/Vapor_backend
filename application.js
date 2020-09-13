@@ -474,7 +474,8 @@ const express = require('express'),
               db.collection('Customers').updateMany({_id:new MongoClient.ObjectID(req.body.CustomerId)},
                 {
                   $set:{
-                    "Customer name": req.body.name,
+
+                    "Customername": req.body.name,
                     "email": req.body.email,
                     "MobileNo": req.body.Mobile,
                     "Address": req.body.Address,
