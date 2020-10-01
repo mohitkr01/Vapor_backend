@@ -107,10 +107,13 @@ app.use(express.static('Vapor_Backend'));
         app.post('/SignIn', (req, res)=> application.SignIn(req, res, db, MongoClient));
         app.post('/SignOut', (req, res)=> application.SignOut(req, res, db, MongoClient));
         app.post('/UpdatPersonalInfo', (req, res)=> application.UpdatPersonalInfo(req, res, db, MongoClient));
+        
         app.post('/FetchBusinessInfo', (req, res)=> application.FetchBusinessInfo(req, res, db, MongoClient));
-        app.post('/UpdateBusinessInfo',uploadImage.single('imagename'), (req, res)=> application.UpdateBusinessInfo(req, res, db, MongoClient));
+        app.post('/UpdateBusinessInfo', (req, res)=> application.UpdateBusinessInfo(req, res, db, MongoClient));
+        
         app.post('/fetchBankingDetails', (req, res)=> application.fetchBankingDetails(req, res, db, MongoClient));
         app.post('/UpdateBankingDetails', (req, res)=> application.UpdateBankingDetails(req, res, db, MongoClient));
+        
         app.post('/FetchProfilephoto', (req, res)=> application.FetchProfilephoto(req, res, db, MongoClient));
         app.post('/fetchbusinesslogo', (req, res)=> application.fetchbusinesslogo(req, res, db, MongoClient));
         app.post('/UpdateProfilePhoto',uploadImage.single('imagename'), (req, res)=> application.UpdateProfilePhoto(req, res, db, MongoClient));  
