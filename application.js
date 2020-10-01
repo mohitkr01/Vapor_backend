@@ -236,7 +236,7 @@ const express = require('express'),
                 db.collection('Banking_details').update({userId:new MongoClient.ObjectID(req.body.userId)},
                 {
                   $set:{
-                    "Bank Name": req.body.BankName,
+                    "BankName": req.body.BankName,
                     "Account Holder Name": req.body.AccountHolder,
                     "Account Number":req.body.AccountNumber,
                     "IFSC Code": req.body.IFSC
