@@ -237,9 +237,9 @@ const express = require('express'),
                 {
                   $set:{
                     "BankName": req.body.BankName,
-                    "Account Holder Name": req.body.AccountHolder,
-                    "Account Number":req.body.AccountNumber,
-                    "IFSC Code": req.body.IFSC
+                    "AccountHolderName": req.body.AccountHolder,
+                    "AccountNumber":req.body.AccountNumber,
+                    "IFSCCode": req.body.IFSC
                   }
                 },{
                   multi:true
