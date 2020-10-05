@@ -116,8 +116,10 @@ app.use(express.static('Vapor_Backend'));
         
         app.post('/FetchProfilephoto', (req, res)=> application.FetchProfilephoto(req, res, db, MongoClient));
         app.post('/fetchbusinesslogo', (req, res)=> application.fetchbusinesslogo(req, res, db, MongoClient));
+        
         app.post('/UpdateProfilePhoto',uploadImage.single('imagename'), (req, res)=> application.UpdateProfilePhoto(req, res, db, MongoClient));  
         app.post('/Updatebusinesslogo',uploadImage.single('imagename'), (req, res)=> application.Updatebusinesslogo(req, res, db, MongoClient));      
+        
         app.post('/CardImage',(req, res) => imageCard.cardImage(req, res, db, MongoClient));
         app.post('/SendImageInMail', (req, res) => application.SendImageInMail(req, res, db, MongoClient, transporter, protocol, hostname, port));
         app.post('/fetchCustomers', (req, res) => application.fetchCustomers(req, res, db, MongoClient));

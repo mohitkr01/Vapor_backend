@@ -162,7 +162,7 @@ const express = require('express'),
                 Imagepath= newpath.split("/")
                 console.log("image path",Imagepath);
                 // console.log(req.file.originalname);
-                let imagepath = 'localhost:8006/'+Imagepath[1];
+                let imagepath = 'https://vaporbackend.herokuapp.com/'+Imagepath[1];
                 db.collection('ProfilePhoto').updateMany({userId: new MongoClient.ObjectID(req.body.userId)},
                 {
                   $set:{
@@ -186,7 +186,7 @@ const express = require('express'),
                 Imagepath= newpath.split("/")
                 console.log("image path",Imagepath);
                 // console.log(req.file.originalname);
-                let imagepath = 'localhost:8006/'+Imagepath[1]
+                let imagepath = 'https://vaporbackend.herokuapp.com/'+Imagepath[1]
                 db.collection('Business_detail').updateMany({userId:new MongoClient.ObjectID(req.body.userId)},
                 {
                   $set:{
@@ -293,7 +293,7 @@ const express = require('express'),
               console.log(Logopath);
               Imagepath = "B_Card"+Math.random().toString(36).substr(2, 9);
 
-              var path = "http://localhost:8006/"+Imagepath+'.png';
+              var path = "https://vaporbackend.herokuapp.com/"+Imagepath+'.png';
               let imagetemplet = await imageCard.genrateInvoiceImage(owner, Businsess, Business_Tag_Line, E_address, Contact, Address, City, State, Pin_Code, Country, Logopath, Imagepath);
               console.log(imagetemplet)
               db.collection('Business_detail').updateMany({userId:new MongoClient.ObjectID(req.body.userId)}, {
