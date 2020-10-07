@@ -260,6 +260,18 @@ const express = require('express'),
 
               },
 
+
+              FetchPersonalInfo:(req, res, db, MongoClient)=>{
+                db.collection('Client_detail').find({userId:new MongoClient.ObjectID(req.body.userId)}).toArray((err, result)=>{
+                  if(err){
+                    res.end();
+                    throw err;
+                  }
+                  res.send(JSON.stringify(result));
+                })
+
+              },
+
               fetchbusinesslogo:(req, res, db, MongoClient)=>{
                 db.collection('Business_detail').find({userId:new MongoClient.ObjectID(req.body.userId)}).toArray((err, result)=>{
                   if(err){
