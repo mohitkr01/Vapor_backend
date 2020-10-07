@@ -214,7 +214,10 @@ const express = require('express'),
                     "City":req.body.city,
                     "State":req.body.state,
                     "Pin_Code":req.body.Code,
-                    "Country":req.body.Country
+                    "Country":req.body.Country,
+                    "GSTNumber": req.body.GSTNumber,
+                    "currency": req.body.currency
+
                   }
                 },{
                   multi:true
