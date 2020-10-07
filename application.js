@@ -250,7 +250,7 @@ const express = require('express'),
               },
 
               FetchProfilephoto:(req, res, db, MongoClient)=>{
-                db.collection('ProfilePhoto').find({_id: new MongoClient.ObjectID(req.body.userId)}).toArray((err, result)=>{
+                db.collection('ProfilePhoto').find({userId:new MongoClient.ObjectID(req.body.userId)}).toArray((err, result)=>{
                   if(err){
                     res.end();
                     throw err;
@@ -262,7 +262,7 @@ const express = require('express'),
 
 
               FetchPersonalInfo:(req, res, db, MongoClient)=>{
-                db.collection('Client_detail').find({userId:new MongoClient.ObjectID(req.body.userId)}).toArray((err, result)=>{
+                db.collection('Client_detail').find({_id:new MongoClient.ObjectID(req.body.userId)}).toArray((err, result)=>{
                   if(err){
                     res.end();
                     throw err;
