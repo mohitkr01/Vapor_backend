@@ -177,21 +177,25 @@ const express = require('express'),
               },
 
               Updatebusinesslogo:(req, res, db, MongoClient)=>{
-                console.log("request param file", req.file);
-                //console.log("request param file ",req.file);
-                let newpath=req.file.path;
-                console.log("req file path",req.file.path);
-                console.log("newpath",newpath);
-                let Imagepath = newpath.split("\\");
-                Imagepath= newpath.split("/")
-                console.log("image path",Imagepath);
-                // console.log(req.file.originalname);
-                let imagepath = 'https://vaporbackend.herokuapp.com/'+Imagepath[1]
+                // console.log("request param file", req.file);
+                // //console.log("request param file ",req.file);
+                // let newpath=req.file.path;
+                // console.log("req file path",req.file.path);
+                // console.log("newpath",newpath);
+                // let Imagepath = newpath.split("\\");
+                // Imagepath= newpath.split("/")
+                // console.log("image path",Imagepath);
+                // // console.log(req.file.originalname);
+                // let imagepath = 'https://vaporbackend.herokuapp.com/'+Imagepath[1]
+               
                 db.collection('Business_detail').updateMany({userId:new MongoClient.ObjectID(req.body.userId)},
                 {
                   $set:{
-                    "Upload_Logo": req.file.originalname,
-                    "Logopath":imagepath
+                    // "Upload_Logo": req.file.originalname,
+                    // "Logopath":imagepath
+                    $set: {
+                      "Signature": req.body.Signature
+                    }
                   }
                 },{
                   multi:true
@@ -278,7 +282,7 @@ const express = require('express'),
                     res.end();
                     throw err;
                   }
-                  res.send(result[0].Logopath);
+                  res.send(result[0].Signature);
                 })
               },
 
